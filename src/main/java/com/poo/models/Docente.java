@@ -1,5 +1,6 @@
 package com.poo.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 enum modalidad{
@@ -23,6 +24,14 @@ public class Docente extends Persona {
 
     public Date getFechaContratacion(){
         return fechaContratacion;
+    }
+
+    public Docente buscarDocentePorNombre(ArrayList<Docente> docentes,String nombre){
+        for(Docente docente : docentes){
+            if(docente.getNombre()==nombre) return docente;
+        }
+        return null;
+
     }
 
     
