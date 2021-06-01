@@ -13,6 +13,7 @@ public class MateriasController extends UniversidadController{
                 "1- Dar de alta una materia \n" +
                 "2- Mostrar alumnos de una materia \n" +
                 "3- Mostrar al profesor de una materia \n" +
-                "4- Dar de baja una materia  \n");
+                "4- Dar de baja una materia  \n" +
+                "5- Regresar \n ");
     }
 }

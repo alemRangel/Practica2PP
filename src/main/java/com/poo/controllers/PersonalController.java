@@ -15,7 +15,8 @@ public class PersonalController extends UniversidadController{
                 "3- Ver todo el Personal de Apoyo \n" +
                 "4- Buscar Personal de Apoyo por ID \n" +
                 "5- Buscar Personal de Apoyo por Nombre \n" +
-                "6- Despedir Personal de Apoyo \n");
+                "6- Despedir Personal de Apoyo \n" +
+                "7- Regresar \n ");
 
     }
 
