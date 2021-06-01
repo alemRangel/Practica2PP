@@ -28,8 +28,8 @@ public class App
                     "1- Alumnos  \n" +
                     "2- Materias \n" +
                     "3- Docentes  \n" +
-                    "4- Personal Auxiliar" +
-                    "5- Salir del sistema");
+                    "4- Personal Auxiliar \n" +
+                    "5- Salir del sistema \n");
             controlOperacion = scan.nextInt();
             switch(controlOperacion){
                 case 1:

@@ -5,7 +5,6 @@ import com.poo.models.Universidad;
 import java.util.Scanner;
 
 public class DocentesController extends UniversidadController{
-    private Scanner scan = new Scanner(System.in);
 
     public DocentesController(Universidad miUniversidad){
         super(miUniversidad);
@@ -25,6 +24,6 @@ public class DocentesController extends UniversidadController{
     }
 
     public void addDocente(){
-        
+
     }
 }

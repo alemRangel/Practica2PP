@@ -1,11 +1,14 @@
 package com.poo.controllers;
 
+import com.poo.enums.ModalidadClase;
+import com.poo.enums.TipoPersona;
+import com.poo.models.Alumno;
+import com.poo.models.Persona;
 import com.poo.models.Universidad;
 
-import java.util.Scanner;
+import java.util.Date;
 
 public class AlumnosController  extends UniversidadController{
-    private Scanner scan = new Scanner(System.in);
     public AlumnosController(Universidad miUniversidad){
         super(miUniversidad);
     }
@@ -33,10 +36,10 @@ public class AlumnosController  extends UniversidadController{
                     getAllAlumnos();
                     break;
                 case 4:
-                    getByIdAlumno();
+                    getAlumnoById();
                     break;
                 case 5:
-                    getByNombreAlumno();
+                    getAlumnoByNombre();
                     break;
                 case 6:
                     deleteAlumno();
@@ -51,6 +54,37 @@ public class AlumnosController  extends UniversidadController{
 
     }
     public void addAlumno(){
+        Alumno alumno;
+        Persona persona;
+        ModalidadClase modalidadClase;
+        Date  fechaMatricula = null;
+        int opcModalidadValida = 0;
+        persona = capturarDatosPersona(TipoPersona.Alumno);
+        do{
+            System.out.println("Seleccione la modalidad en la que desea estudiar:\n" +
+                    "1-Presencial \n" +
+                    "2-Distancia \n" +
+                    "3-Mixta\n");
+            opcModalidadValida = scan.nextInt();
+            switch(opcModalidadValida){
+                case 1:
+                    modalidadClase = ModalidadClase.Presencial;
+                    break;
+                case 2:
+                    modalidadClase = ModalidadClase.Distancia;
+                    break;
+                case 3:
+                    modalidadClase = ModalidadClase.Mixta;
+                    break;
+                default:
+                    System.out.println("Introduzca una opción válida");
+                    opcModalidadValida = 0;
+            }
+        }while(opcModalidadValida == 0);
+        do{
+            System.out.println("");
+        }while(fechaMatricula == null);
+
 
     }
     public void addMateria(){
@@ -59,12 +93,17 @@ public class AlumnosController  extends UniversidadController{
     public void getAllAlumnos(){
 
     }
-    public void getByIdAlumno(){
+    public void getAlumnoById(){
 
     }
-    public void getByNombreAlumno(){
+    public void getAlumnoByNombre(){
 
     }
     public void deleteAlumno(){}
+
+    private void elegirModalidad(){
+
+    }
+
 
 }
