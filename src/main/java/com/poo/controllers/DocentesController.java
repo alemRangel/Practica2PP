@@ -23,4 +23,8 @@ public class DocentesController extends UniversidadController{
                 "7- Regresar \n ");
 
     }
+
+    public void addDocente(){
+        
+    }
 }
