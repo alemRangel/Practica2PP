@@ -2,11 +2,11 @@ package com.poo.controllers;
 
 import com.poo.models.Universidad;
 
-public class DocentesController {
+public class DocentesController extends UniversidadController{
     private Universidad universidad;
 
     public DocentesController(Universidad miUniversidad){
-        universidad = miUniversidad;
+        super(miUniversidad);
     }
 
     public void docente(){

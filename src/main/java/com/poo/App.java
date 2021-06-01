@@ -35,18 +35,22 @@ public class App
                 case 1:
                     controladorAlumnos = new AlumnosController(miUniversidad);
                     controladorAlumnos.alumnos();
+                    miUniversidad = controladorAlumnos.getMiUniversidad();
                     break;
                 case 2:
                     controladorMaterias = new MateriasController(miUniversidad);
                     controladorMaterias.materias();
+                    miUniversidad = controladorMaterias.getMiUniversidad();
                     break;
                 case 3:
                     controladorDocentes = new DocentesController(miUniversidad);
                     controladorDocentes.docente();
+                    miUniversidad = controladorDocentes.getMiUniversidad();
                     break;
                 case 4:
                     controladorPersonal = new PersonalController(miUniversidad);
                     controladorPersonal.personal();
+                    miUniversidad = controladorPersonal.getMiUniversidad();
                     break;
                 case 5:
                     System.out.println("Terminando el programa \n ");

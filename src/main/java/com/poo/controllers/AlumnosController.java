@@ -2,11 +2,10 @@ package com.poo.controllers;
 
 import com.poo.models.Universidad;
 
-public class AlumnosController  {
-    private Universidad universidad;
+public class AlumnosController  extends UniversidadController{
 
     public AlumnosController(Universidad miUniversidad){
-        universidad = miUniversidad;
+        super(miUniversidad);
     }
 
     public void alumnos(){
@@ -20,4 +19,6 @@ public class AlumnosController  {
                 "6- Dar de baja alumno \n");
 
     }
+
+
 }

@@ -1,12 +1,10 @@
 package com.poo.controllers;
 import com.poo.models.Universidad;
 
-public class PersonalController {
-    private Universidad universidad;
+public class PersonalController extends UniversidadController{
 
-
-    public PersonalController(Universidad miUniversidad){
-        universidad = miUniversidad;
+    public  PersonalController(Universidad miUniversidad) {
+        super(miUniversidad);
     }
 
 
