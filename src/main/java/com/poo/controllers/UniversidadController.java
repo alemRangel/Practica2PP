@@ -2,9 +2,11 @@ package com.poo.controllers;
 
 import com.poo.enums.ModalidadClase;
 import com.poo.enums.TipoPersona;
+import com.poo.enums.TipoPersonal;
 import com.poo.models.Docente;
 import com.poo.models.Materia;
 import com.poo.models.Persona;
+import com.poo.models.PersonalApoyo;
 import com.poo.models.Universidad;
 import com.poo.util.Util;
 
@@ -66,6 +68,33 @@ public class UniversidadController {
 
     return materia;
     }*/
+
+    public PersonalApoyo capturarDatosPersonal(TipoPersonal tipoPersonal){
+        PersonalApoyo personal;
+        String curp, nombre, direccion, fecAux;
+        int id;
+        Date fechaNacimiento;        
+        System.out.println("Va a dar de alta un nuevo" +tipoPersonal+": \n");
+        System.out.println("Introduzca el nombre del " +tipoPersonal+" \n");
+        nombre = scan.nextLine();
+        System.out.println("Introduzca la curp del " +tipoPersonal+"\n");
+        curp = scan.nextLine();
+        System.out.println("Introduzca la dirección del " +tipoPersonal+" \n");
+        direccion =  scan.nextLine();
+        System.out.println("Introduzca el Id del " +tipoPersonal+" \n");
+        id =  scan.nextInt();
+        do{
+            System.out.println("Introduzca la fecha de nacimiento (dd/MM/yyyy) del " +tipoPersonal+"\n");
+            fecAux = scan.nextLine();
+            fechaNacimiento = util.validarFecha(fecAux);
+        }while(fechaNacimiento == null);
+        personal = new PersonalApoyo(curp, nombre, direccion, fechaNacimiento,id);
+
+        return personal;
+    }
+
+    
+
 
     
 
