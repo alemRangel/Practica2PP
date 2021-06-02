@@ -12,6 +12,7 @@ public class Materia {
         this.claveGrupo=claveGrupo;
         this.docente=docente;
     }
+
     public int getId(){
         return id;
     }
@@ -24,4 +25,5 @@ public class Materia {
     public Docente getDocente(){
         return docente;
     }
+
 }

@@ -16,14 +16,16 @@ public class InscripcionMaterias {
     public Alumno getAlumno(){
         return alumno;
     }
-    public Materia getMateria(){
-        return materia;
-    }
+
     public float getCalificacion(){
         return calificacion;
     }
     public int getId(){
         return id;
+    }
+
+    public Materia getMateriadeTira(){
+        return materia;
     }
 
 }

@@ -94,7 +94,7 @@ public class AlumnosController  extends UniversidadController{
                     "Fecha de nacimiento:"+alumno.getFechaNac()+"\t Modalidad: "+alumno.getModalidadClase()+"\n");
             System.out.println("La tira de materias de "+alumno.getNombre()+" es: \n");
             for(InscripcionMaterias inscripcionMaterias: alumno.getTiraMaterias().getInscripcionMaterias()){
-                System.out.println("Nombre de la Materia:"+inscripcionMaterias.getMateria().getNombreMateria()+" \n");
+                System.out.println("Nombre de la Materia:"+inscripcionMaterias.getMateriadeTira().getNombreMateria()+" \n");
             }
         }
     }

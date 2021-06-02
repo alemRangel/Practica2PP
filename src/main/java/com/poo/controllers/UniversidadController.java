@@ -2,9 +2,11 @@ package com.poo.controllers;
 
 import com.poo.enums.ModalidadClase;
 import com.poo.enums.TipoPersona;
+import com.poo.enums.TipoPersonal;
 import com.poo.models.Docente;
 import com.poo.models.Materia;
 import com.poo.models.Persona;
+import com.poo.models.PersonalApoyo;
 import com.poo.models.Universidad;
 import com.poo.util.Util;
 
@@ -43,29 +45,10 @@ public class UniversidadController {
         persona = new Persona(curp, nombre, direccion, fechaNacimiento);
 
         return persona;
-    }
-
-   /* public Materia capturarDatosMateria(){
-        Materia materia;
-        String nombreMateria, claveGrupo,nombreDocente;
-        Docente docente;
-        int id;
-
-        System.out.println("Introduzca el nombre de la nueva materia \n");
-        nombreMateria = scan.nextLine();
-        System.out.println("Introduzca el ID de la nueva materia\n");
-        id = scan.nextInt();
-        System.out.println("Introduzca la clave del grupo donde se impartira la nueva materia\n");
-        claveGrupo =  scan.nextLine();
-        System.out.println("Introduzca los datos del docente que impartira la nueva materia\n");
-        nombreDocente =  scan.nextLine();
-        
+    }   
 
     
-    materia = new Materia(id,nombreMateria,claveGrupo,docente);
 
-    return materia;
-    }*/
 
     
 
