@@ -78,9 +78,11 @@ public class AlumnosController  extends UniversidadController{
                     opcModalidadValida = 0;
             }
         }while(opcModalidadValida == 0);
+
         Alumno alumnoNuevo = new Alumno(persona.getCurp(), persona.getNombre(), persona.getDireccion(),
-                persona.getFechaNac(), universidad.getAlumnos().size()+1, fechaMatricula, modalidadClase, null );
+                persona.getFechaNac(), universidad.getAlumnosId(), fechaMatricula, modalidadClase, null );
         universidad.getAlumnos().add(alumnoNuevo);
+        universidad.setAlumnosId(universidad.getAlumnosId()+1);
     }
     private void addMateriaToAlumno(){
         int idMateriaAux=0,idAlumnoAux=0;
@@ -149,7 +151,7 @@ public class AlumnosController  extends UniversidadController{
     }
     private void deleteAlumno(){
         int auxIdAlumno;
-        System.out.println("Inserte el ID de alumno que desee buscar \n");
+        System.out.println("Inserte el ID de alumno que desee eliminar \n");
         auxIdAlumno = scan.nextInt();
         for(Alumno alumno: universidad.getAlumnos()) {
             if (alumno.getId() == auxIdAlumno) {

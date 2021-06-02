@@ -1,5 +1,7 @@
 package com.poo.models;
 
+import com.poo.enums.ModalidadContrato;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -10,12 +12,13 @@ enum modalidad{
 public class Docente extends Persona {
     private int id;
     private Date fechaContratacion;
-
-    public Docente(String curp, String nombre, String direccion, Date fechaNac, int id, Date fechaContratacion){
+    private ModalidadContrato modalidadContrato;
+    public Docente(String curp, String nombre, String direccion, Date fechaNac, int id, Date fechaContratacion,
+                   ModalidadContrato modalidadContrato){
         super(curp,nombre,direccion,fechaNac);
         this.id=id;
         this.fechaContratacion=fechaContratacion;
-
+        this.modalidadContrato = modalidadContrato;
     }
 
     public int getId(){
@@ -25,6 +28,8 @@ public class Docente extends Persona {
     public Date getFechaContratacion(){
         return fechaContratacion;
     }
+
+    public ModalidadContrato getModalidadContrato(){return modalidadContrato;}
 
     public Docente buscarDocentePorNombre(ArrayList<Docente> docentes,String nombre){
         for(Docente docente : docentes){
