@@ -19,7 +19,7 @@ public class PersonalController extends UniversidadController{
 
     public void personal(){
 
-        int opc;
+        String opc;
 
         do{
 
@@ -32,28 +32,29 @@ public class PersonalController extends UniversidadController{
                 "6- Despedir Personal de Apoyo \n" +
                 "7- Regresar \n ");
         
-        opc=scan.nextInt();
+        opc=scan.nextLine();
+        
 
         switch(opc){
-            case 1: 
+            case "1": 
                 addPApoyo();
                 break;
-            case 2:
+            case "2":
                 asignarPApoyo();
                 break;
-            case 3:
+            case "3":
                 getAllPApoyo();
                 break;
-            case 4:
+            case "4":
                 getByIdPApoyo();
                 break;
-            case 5:
+            case "5":
                 getByNombrePApoyo();
                 break;
-            case 6:
+            case "6":
                 deletePApoyo();
                 break;
-            case 7:
+            case "7":
                 return;
             default:
                 System.out.println("Inserte una opción válida \n");
@@ -113,8 +114,10 @@ public class PersonalController extends UniversidadController{
         for(int i=0;i<universidad.getPersonal().size();i++){
             if(universidad.getPersonal().get(i).getId()==idPersonal){
                 System.out.println(universidad.getPersonal().get(i));
+                return;
             }
         }
+        System.out.println("No se encontró ningún personal de apoyo con ese id \n");
     }
     public void getByNombrePApoyo(){
         String nombrePersonal;
@@ -124,23 +127,26 @@ public class PersonalController extends UniversidadController{
         for(int i=0;i<universidad.getPersonal().size();i++){
             if(universidad.getPersonal().get(i).getNombre().equals(nombrePersonal)){
                 System.out.println(universidad.getPersonal().get(i));
+                return;
             }
+            System.out.println("No se encontró ningún personal de apoyo con ese nombre \n");
 
         }
 
     }
     public void deletePApoyo(){
-        String nombrePersonal;
-        System.out.println("Introduzca el nombre del Personal de apoyo que desea despedir \n");
-        nombrePersonal = scan.nextLine();
+        int idPersonal;
+        System.out.println("Introduzca el Id del Personal de apoyo que desea visualizar su infomacion \n");
+        idPersonal = scan.nextInt();
         scan.nextLine();
         for(int i=0;i<universidad.getPersonal().size();i++){
-            if(universidad.getPersonal().get(i).getNombre().equals(nombrePersonal)){
+            if(universidad.getPersonal().get(i).getId()==idPersonal){
+                System.out.println("El sistema encontró al personal de apoyo buscado y lo eliminó \n");
                 universidad.getPersonal().remove(i);
+                return; 
             }
-
         }
-        
+        System.out.println("No se encontró ningún personal de apoyo con ese id \n");        
     }
 
 

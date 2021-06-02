@@ -33,7 +33,7 @@ public class Persona{
     }
 
     public String toString(){
-        return "Nombre:"+nombre+"Curp: "+curp+" Direccion: "+direccion+" Fecha de nacimietno: "+
+        return "Nombre:"+nombre+"\tCurp: "+curp+"\tDireccion: "+direccion+"\tFecha de nacimietno: "+
         fechaNac;
     }
 
