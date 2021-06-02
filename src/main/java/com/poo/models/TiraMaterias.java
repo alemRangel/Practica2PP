@@ -13,6 +13,10 @@ public class TiraMaterias {
         inscripcionMaterias=inscMat;
     }
 
+    public TiraMaterias(){
+        inscripcionMaterias = new ArrayList<InscripcionMaterias>();
+    }
+
 
     public int getIdTiraMaterias(){
         return this.id;

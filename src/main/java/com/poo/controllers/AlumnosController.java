@@ -80,7 +80,7 @@ public class AlumnosController  extends UniversidadController{
         }while(opcModalidadValida == 0);
 
         Alumno alumnoNuevo = new Alumno(persona.getCurp(), persona.getNombre(), persona.getDireccion(),
-                persona.getFechaNac(), universidad.getAlumnosId(), fechaMatricula, modalidadClase, null );
+                persona.getFechaNac(), universidad.getAlumnosId(), fechaMatricula, modalidadClase, new TiraMaterias() );
         universidad.getAlumnos().add(alumnoNuevo);
         universidad.setAlumnosId(universidad.getAlumnosId()+1);
     }
@@ -96,7 +96,7 @@ public class AlumnosController  extends UniversidadController{
             if(materia.getId() == idMateriaAux) {
                 System.out.println("Se ha encontrado una materia con ese Id \n");
                 materiaAux = materia;
-                System.out.println("Ingrese el número de id del alumno al que desee" +
+                System.out.println("Ingrese el número de id del alumno al que desee " +
                         "añadir a esta materia \n");
                 idAlumnoAux = scan.nextInt();
                 for (Alumno alumno : universidad.getAlumnos()) {
@@ -106,6 +106,7 @@ public class AlumnosController  extends UniversidadController{
                         inscripcionMateria = new InscripcionMaterias(alumnoAux.getTiraMaterias().getInscripcionMaterias().size() + 1,
                                 alumnoAux, materiaAux, 0);
                         universidad.getAlumnos().get(ind).getTiraMaterias().getInscripcionMaterias().add(inscripcionMateria);
+                        System.out.println("Se añadió la materia a la tira de materias de ese alumno");
                         return;
                     }
                     ++ind;
