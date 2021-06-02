@@ -33,6 +33,7 @@ public class PersonalController extends UniversidadController{
                 "7- Regresar \n ");
         
         opc=scan.nextInt();
+        
 
         switch(opc){
             case 1: 
@@ -117,10 +118,12 @@ public class PersonalController extends UniversidadController{
         }
     }
     public void getByNombrePApoyo(){
+        //scan.nextInt();
         String nombrePersonal;
-        System.out.println("Introduzca el nombre del Personal de apoyo que desea visualizar su infomacion \n");
+        System.out.println("Introduzca el nombre del Personal de apoyo que desea visualizar su infomacion" +"\n");
+        scan.nextInt();
         nombrePersonal = scan.nextLine();
-        scan.nextLine();
+        //scan.nextLine();
         for(int i=0;i<universidad.getPersonal().size();i++){
             if(universidad.getPersonal().get(i).getNombre().equals(nombrePersonal)){
                 System.out.println(universidad.getPersonal().get(i));

@@ -51,6 +51,11 @@ public class Persona{
         return Persona;
     }*/
 
+    public String toString(){
+        return "Nombre:"+nombre+"Curp: "+curp+" Direccion: "+direccion+" Fecha de nacimietno: "+
+        fechaNac;
+    }
+
 
 
 

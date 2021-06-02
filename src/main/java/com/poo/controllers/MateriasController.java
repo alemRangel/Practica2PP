@@ -10,8 +10,6 @@ import com.poo.models.Persona;
 
 public class MateriasController extends UniversidadController{
     
-    private ArrayList<Materia> materias = new ArrayList<>();
-
     private Scanner scan = new Scanner(System.in);
 
     public MateriasController(Universidad miUniversidad){
