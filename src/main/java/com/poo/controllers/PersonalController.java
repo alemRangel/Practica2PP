@@ -97,30 +97,34 @@ public class PersonalController extends UniversidadController{
             }
         }while(opctipoPersonaldValido == 0);
         PersonalApoyo personalNuevo = new PersonalApoyo(persona.getCurp(), persona.getNombre(), persona.getDireccion(),
-                persona.getFechaNac(), universidad.getPersonalId()+1,tipoPersonal);
+                persona.getFechaNac(), universidad.getPersonalId(),tipoPersonal);
         universidad.getPersonal().add(personalNuevo);
         universidad.setPersonalApoyoId(universidad.getPersonalId()+1);
 
     }
     public void asignarPApoyo(){
         int idMateriaAux,idPersonalAux;
+        int ind = 0;
         System.out.println("Elija la materia por id, a la que le quiera añadir personal de apoyo \n");
         idMateriaAux = scan.nextInt();
         for(Materia materia : universidad.getMaterias()){
+
             if(materia.getId() == idMateriaAux){
                 System.out.println("Ingrese el número de Id del personal de apoyo al que desea asignar " +
                         "a la materia: "+materia.getNombreMateria()+"\n");
                 idPersonalAux = scan.nextInt();
                 for(PersonalApoyo personal : universidad.getPersonal()){
                     if(personal.getId() == idPersonalAux){
-                        universidad.getMaterias().get(idMateriaAux).setPersonalApoyo(personal);
-                        System.out.println("Se designó al miembro del personal de apoyo "+personal.getNombre()+"" +
+                        universidad.getMaterias().get(ind).setPersonalApoyo(personal);
+                        System.out.println("Se designó al miembro del personal de apoyo "+personal.getNombre()+" " +
                                 "como ayuda de la materia "+materia.getNombreMateria()+"\n");
+                        return;
                     }
                 }
                 System.out.println("No se encontró el profesor buscado \n");
                 return;
             }
+            ++ind;
         }
         System.out.println("No se encontró la materia buscada \n");
     }

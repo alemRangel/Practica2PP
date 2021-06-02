@@ -33,7 +33,8 @@ public class Materia {
 
     public String toString(){
         return "Id: " + id + " Nombre de la materia: " + nombreMateria +
-         " Clave del grupo donde se imparte la materia: "+ claveGrupo +" Docente que la imparte: " + docente;
+         " Clave del grupo donde se imparte la materia: "+ claveGrupo +" Docente que la imparte: " + docente +
+                " Auxiliar de la materia:" + personalApoyo;
     }
 
 }

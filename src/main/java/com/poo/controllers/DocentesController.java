@@ -151,6 +151,7 @@ public class DocentesController extends UniversidadController{
 
     private void addMateria() {
         int idMateriaAux,idDocenteAux;
+        int ind=0;
         System.out.println("Elija la materia por id, a la que le quiera añadir un docente \n");
         idMateriaAux = scan.nextInt();
         for(Materia materia : universidad.getMaterias()){
@@ -160,14 +161,16 @@ public class DocentesController extends UniversidadController{
                 idDocenteAux = scan.nextInt();
                 for(Docente docente : universidad.getDocentes()){
                     if(docente.getId() == idDocenteAux){
-                        universidad.getMaterias().get(idMateriaAux).setDocente(docente);
+                        universidad.getMaterias().get(ind).setDocente(docente);
                         System.out.println("Se designó al docente "+docente.getNombre()+"" +
                                 "como titular de la materia "+materia.getNombreMateria()+"");
+                        return;
                     }
                 }
                 System.out.println("No se encontró el profesor buscado");
                 return;
             }
+            ++ind;
         }
         System.out.println("No se encontró la materia buscada");
     }

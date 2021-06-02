@@ -106,13 +106,14 @@ public class MateriasController extends UniversidadController{
     }
 
     public void deleteMateria(){
-        String nombreMateria;
-        System.out.println("Introduzca el nombre de la materia de la que quiere Eliminar \n");
-        nombreMateria = scan.nextLine();
+        int idMateria;
+        System.out.println("Introduzca el id de la materia de la que quiere Eliminar \n");
+        idMateria = scan.nextInt();
         scan.nextLine();
         for(int i=0;i<universidad.getMaterias().size();i++){
-            if(universidad.getMaterias().get(i).getNombreMateria().equals(nombreMateria)){
+            if(universidad.getMaterias().get(i).getId() == idMateria){
                 universidad.getMaterias().remove(i);
+                System.out.println("Se eliminó la materia \n");
                 return;
             }
         }
@@ -120,8 +121,14 @@ public class MateriasController extends UniversidadController{
     }
 
     public void impMaterias(){
-        for(int i=0;i<universidad.getMaterias().size();i++){
-            System.out.println(universidad.getMaterias().get(i));
+        int size = universidad.getMaterias().size();
+        if(size > 0){
+            for(int i=0;i<size;i++){
+                System.out.println(universidad.getMaterias().get(i));
+            }
+        }
+        else{
+            System.out.println("No hay materias por mostrar \n");
         }
 
     }
@@ -142,11 +149,11 @@ public class MateriasController extends UniversidadController{
         //System.out.println("Introduzca el nombre del docente que impartira la nueva materia\n");
         //nombreDocente =  scan.nextLine();
         docente=null;
-        id = universidad.getAlumnosId()+1;
-        universidad.setAlumnosId(universidad.getAlumnosId()+1);
+        id = universidad.getMateriasId();
+        universidad.setMateriasId(universidad.getMateriasId()+1);
 
         materia = new Materia(id,nombreMateria,claveGrupo,docente);
-
+        System.out.println("Se ha añadido una nueva materia \n");
         return materia;
     }
 }

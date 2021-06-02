@@ -86,6 +86,7 @@ public class AlumnosController  extends UniversidadController{
     }
     private void addMateriaToAlumno(){
         int idMateriaAux=0,idAlumnoAux=0;
+        int ind = 0;
         Alumno alumnoAux;
         Materia materiaAux;
         InscripcionMaterias inscripcionMateria;
@@ -104,12 +105,13 @@ public class AlumnosController  extends UniversidadController{
                         alumnoAux = alumno;
                         inscripcionMateria = new InscripcionMaterias(alumnoAux.getTiraMaterias().getInscripcionMaterias().size() + 1,
                                 alumnoAux, materiaAux, 0);
-                        universidad.getAlumnos().get(idAlumnoAux).getTiraMaterias().getInscripcionMaterias().add(inscripcionMateria);
+                        universidad.getAlumnos().get(ind).getTiraMaterias().getInscripcionMaterias().add(inscripcionMateria);
                         return;
                     }
-                    System.out.println("No se encontró el alumno buscado \n");
-                    return;
+                    ++ind;
                 }
+            System.out.println("No se encontró el alumno buscado \n");
+            return;
             }
         }
         System.out.println("No se encontró la materia buscada \n");
