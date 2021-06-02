@@ -36,6 +36,10 @@ public class Alumno extends Persona {
     public String getNombreAlumno(){
         return nombre;
     }
+
+    public String toString(){
+        return "\tId: "+id+super.toString()+"\tModalidad: "+modalidad+"\tTira de materias: "+tiraMaterias;
+    }
     /*public Alumno buscarAlumnoId(int id){
         
         return Alumno;

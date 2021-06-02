@@ -39,6 +39,10 @@ public class Docente extends Persona {
 
     }
 
+    public String toString(){
+        return "\tId: "+id+super.toString()+"\tModalidad de contrato: "+modalidadContrato;
+    }
+
 
     
 }

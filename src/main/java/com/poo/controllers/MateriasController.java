@@ -97,7 +97,7 @@ public class MateriasController extends UniversidadController{
             scan.nextLine();
             for (int i = 0; i < universidad.getMaterias().size(); i++) {
                 if (universidad.getMaterias().get(i).getNombreMateria().equals(nombreMateria)) {
-                    System.out.println(universidad.getDocentes().get(i).getNombre());
+                    System.out.println(universidad.getDocentes().get(i));
                     return;
                 }
             }
