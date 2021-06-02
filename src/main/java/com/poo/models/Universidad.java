@@ -44,6 +44,7 @@ public class Universidad {
     public ArrayList<Materia> getMaterias(){
         return materias;
     }
+    
     public void setMaterias(ArrayList<Materia> materias){
         this.materias = materias;
     }
