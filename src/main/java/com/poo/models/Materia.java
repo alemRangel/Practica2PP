@@ -13,4 +13,8 @@ public class Materia {
         this.docente=docente;
     }
 
+    public String getNombreMateria(){
+        return nombreMateria;
+    }
+
 }

@@ -27,15 +27,9 @@ public class MateriasController extends UniversidadController{
                 "2- Mostrar alumnos de una materia \n" +
                 "3- Mostrar al profesor de una materia \n" +
                 "4- Dar de baja una materia  \n" +
-<<<<<<< HEAD
                 "5- Mostrar todas la materias \n"+
                 "6- Regresar \n ");
-=======
-                "5- Mostrar todas las materias \n" +
-                "6- Regresar \n ");
 
->>>>>>> e77e26f389bbc86763fb79f2ea27236c8e482908
-    
         opc=scan.nextInt();
         scan.nextLine();
 
@@ -113,13 +107,10 @@ public class MateriasController extends UniversidadController{
         System.out.println("Introduzca el nombre de la materia de la que quiere Eliminar \n");
         nombreMateria = scan.nextLine();
         scan.nextLine();        
-        for(int i=0;i<universidad.getMaterias().size();i++){
-            System.out.println("For, Nombreingresado:"+nombreMateria+" Nombre de la busqueda: "+universidad.getMaterias().get(i).getNombreMateria()+"a\n");
-            if(universidad.getMaterias().get(i).getNombreMateria().equals(nombreMateria)){
-                System.out.println("IFFFF");
+        for(int i=0;i<universidad.getMaterias().size();i++){            
+            if(universidad.getMaterias().get(i).getNombreMateria().equals(nombreMateria)){                
                 universidad.getMaterias().remove(i);
-                //universidad.setMaterias(universidad.getMaterias().remove(i));
-                //i--;
+                
             }
         }
 

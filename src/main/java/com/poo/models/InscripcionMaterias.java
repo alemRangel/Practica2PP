@@ -14,4 +14,8 @@ public class InscripcionMaterias {
         this.calificacion=calificacion;
     }
 
+    public Materia getMateriadeTira(){
+        return materia;
+    }
+
 }

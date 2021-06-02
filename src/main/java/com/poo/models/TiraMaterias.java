@@ -10,4 +10,8 @@ public class TiraMaterias {
         this.alumno=alumno;
         inscripcionMaterias=inscMat;
     }
+
+    public InscripcionMaterias getInscripcionMaterias(){
+        return inscripcionMaterias;
+    }
 }

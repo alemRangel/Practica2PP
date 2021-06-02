@@ -32,6 +32,10 @@ public class Alumno extends Persona {
     public ModalidadClase getModalidadClase(){return modalidad;}
 
     public TiraMaterias getTiraMaterias(){return tiraMaterias;}
+
+    public String getNombreAlumno(){
+        return nombre;
+    }
     /*public Alumno buscarAlumnoId(int id){
         
         return Alumno;
