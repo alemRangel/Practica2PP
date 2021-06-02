@@ -82,23 +82,26 @@ public class MateriasController extends UniversidadController{
                 break;
             }
             System.out.println("No se encontró la materia buscada \n");
+
         }
 
     }
-    public void getProfesor(){
-        if(universidad.getDocentes().isEmpty()) System.out.println("No hay docentes inscritos en la universidad, ingrese primero los docentes");
-        else{
+    public void getProfesor() {
+        if (universidad.getDocentes().isEmpty())
+            System.out.println("No hay docentes inscritos en la universidad, ingrese primero los docentes");
+        else {
+
             String nombreMateria;
             System.out.println("Introduzca el nombre de la materia de la que quiere mostrar el profesor \n");
             nombreMateria = scan.nextLine();
             scan.nextLine();
-            for(int i=0;i<universidad.getMaterias().size();i++){
-                if(universidad.getMaterias().get(i).getNombreMateria().equals(nombreMateria)){
-                    //System.out.println(universidad.getMaterias().get(i).getNombreMateria());
+            for (int i = 0; i < universidad.getMaterias().size(); i++) {
+                if (universidad.getMaterias().get(i).getNombreMateria().equals(nombreMateria)) {
                     System.out.println(universidad.getDocentes().get(i).getNombre());
+                    return;
                 }
-
             }
+            System.out.println("No se encontró ningúna materia con ese nombre \n");
         }
     }
 
@@ -110,11 +113,10 @@ public class MateriasController extends UniversidadController{
         for(int i=0;i<universidad.getMaterias().size();i++){
             if(universidad.getMaterias().get(i).getNombreMateria().equals(nombreMateria)){
                 universidad.getMaterias().remove(i);
-
+                return;
             }
         }
-
-
+        System.out.println("No se encontró ningúna materia con ese nombre \n");
     }
 
     public void impMaterias(){

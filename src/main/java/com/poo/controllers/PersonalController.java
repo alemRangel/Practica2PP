@@ -25,15 +25,18 @@ public class PersonalController extends UniversidadController{
         do{
 
             System.out.println("Seleccione la opción que desee ejecutar \n" +
-                    "1- Contratar Personal de apoyo \n" +
-                    "2- Asignar Personal de Apoyo a una materia \n" +
-                    "3- Ver todo el Personal de Apoyo \n" +
-                    "4- Buscar Personal de Apoyo por ID \n" +
-                    "5- Buscar Personal de Apoyo por Nombre \n" +
-                    "6- Despedir Personal de Apoyo \n" +
-                    "7- Regresar \n ");
+                "1- Contratar Personal de apoyo \n" +
+                "2- Asignar Personal de Apoyo a una materia \n" +
+                "3- Ver todo el Personal de Apoyo \n" +
+                "4- Buscar Personal de Apoyo por ID \n" +
+                "5- Buscar Personal de Apoyo por Nombre \n" +
+                "6- Despedir Personal de Apoyo \n" +
+                "7- Regresar \n ");
+        
+        opc=scan.nextLine();
+        
 
-            opc=scan.nextLine();
+
 
 
             switch(opc){
@@ -168,6 +171,7 @@ public class PersonalController extends UniversidadController{
             }
         }
         System.out.println("No se encontró ningún personal de apoyo con ese id \n");
+
     }
 
 
