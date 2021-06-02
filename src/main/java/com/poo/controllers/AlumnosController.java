@@ -2,9 +2,7 @@ package com.poo.controllers;
 
 import com.poo.enums.ModalidadClase;
 import com.poo.enums.TipoPersona;
-import com.poo.models.Alumno;
-import com.poo.models.Persona;
-import com.poo.models.Universidad;
+import com.poo.models.*;
 
 import java.util.Date;
 
@@ -30,7 +28,7 @@ public class AlumnosController  extends UniversidadController{
                     addAlumno();
                     break;
                 case 2:
-                    addMateria();
+                    addMateriaToAlumno();
                     break;
                 case 3:
                     getAllAlumnos();
@@ -53,7 +51,7 @@ public class AlumnosController  extends UniversidadController{
 
 
     }
-    public void addAlumno(){
+    private void addAlumno(){
         Alumno alumno;
         Persona persona;
         ModalidadClase modalidadClase = null;
@@ -85,19 +83,28 @@ public class AlumnosController  extends UniversidadController{
                 persona.getFechaNac(), universidad.getAlumnos().size()+1, fechaMatricula, modalidadClase, null );
         universidad.getAlumnos().add(alumnoNuevo);
     }
-    public void addMateria(){
+    private void addMateriaToAlumno(){
 
     }
-    public void getAllAlumnos(){
+    private void getAllAlumnos(){
+        System.out.println("La lista de alumnos es la siguiente: \n");
+        for(Alumno alumno: universidad.getAlumnos()){
+            System.out.println("ID:"+alumno.getId()+"\t Nombre: "+alumno.getNombre()+"\t" +
+                    "CURP:"+alumno.getCurp()+"\t Dirección: "+alumno.getDireccion()+"\t" +
+                    "Fecha de nacimiento:"+alumno.getFechaNac()+"\t Modalidad: "+alumno.getModalidadClase()+"\n");
+            System.out.println("La tira de materias de "+alumno.getNombre()+" es: \n");
+            for(InscripcionMaterias inscripcionMaterias: alumno.getTiraMaterias().getInscripcionMaterias()){
+                System.out.println("Nombre de la Materia:"+inscripcionMaterias.getMateria().getNombreMateria()+" \n");
+            }
+        }
+    }
+    private void getAlumnoById(){
 
     }
-    public void getAlumnoById(){
+    private void getAlumnoByNombre(){
 
     }
-    public void getAlumnoByNombre(){
-
-    }
-    public void deleteAlumno(){}
+    private void deleteAlumno(){}
 
     private void crearTiraMaterias(){
 

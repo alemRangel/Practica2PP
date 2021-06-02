@@ -13,5 +13,17 @@ public class InscripcionMaterias {
         this.materia=materia;
         this.calificacion=calificacion;
     }
+    public Alumno getAlumno(){
+        return alumno;
+    }
+    public Materia getMateria(){
+        return materia;
+    }
+    public float getCalificacion(){
+        return calificacion;
+    }
+    public int getId(){
+        return id;
+    }
 
 }
