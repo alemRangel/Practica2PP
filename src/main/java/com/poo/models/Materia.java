@@ -26,4 +26,9 @@ public class Materia {
         return docente;
     }
 
+    public String toString(){
+        return "Id: " + id + " Nombre de la materia: " + nombreMateria +
+         " Clave del grupo donde se imparte la materia: "+ claveGrupo +" Docente que la imparte: " + docente;
+    }
+
 }

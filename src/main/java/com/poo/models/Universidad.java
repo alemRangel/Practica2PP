@@ -35,8 +35,8 @@ public class Universidad {
     public void setDocentes(ArrayList<Docente> docentes){
         this.docentes = docentes;
     }
-    public ArrayList<Alumno> getPersonal(){
-        return alumnos;
+    public ArrayList<PersonalApoyo> getPersonal(){
+        return personalApoyo;
     }
     public void setPersonalApoyo(ArrayList<PersonalApoyo> personalApoyo){
         this.personalApoyo = personalApoyo;

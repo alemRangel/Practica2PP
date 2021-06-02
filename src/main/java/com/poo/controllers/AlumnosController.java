@@ -52,7 +52,6 @@ public class AlumnosController  extends UniversidadController{
 
     }
     private void addAlumno(){
-        Alumno alumno;
         Persona persona;
         ModalidadClase modalidadClase = null;
         Date  fechaMatricula = new Date();
