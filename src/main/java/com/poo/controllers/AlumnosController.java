@@ -56,8 +56,8 @@ public class AlumnosController  extends UniversidadController{
     public void addAlumno(){
         Alumno alumno;
         Persona persona;
-        ModalidadClase modalidadClase;
-        Date  fechaMatricula = null;
+        ModalidadClase modalidadClase = null;
+        Date  fechaMatricula = new Date();
         int opcModalidadValida = 0;
         persona = capturarDatosPersona(TipoPersona.Alumno);
         do{
@@ -81,11 +81,9 @@ public class AlumnosController  extends UniversidadController{
                     opcModalidadValida = 0;
             }
         }while(opcModalidadValida == 0);
-        do{
-            System.out.println("");
-        }while(fechaMatricula == null);
-
-
+        Alumno alumnoNuevo = new Alumno(persona.getCurp(), persona.getNombre(), persona.getDireccion(),
+                persona.getFechaNac(), universidad.getAlumnos().size()+1, fechaMatricula, modalidadClase, null );
+        universidad.getAlumnos().add(alumnoNuevo);
     }
     public void addMateria(){
 
@@ -101,7 +99,7 @@ public class AlumnosController  extends UniversidadController{
     }
     public void deleteAlumno(){}
 
-    private void elegirModalidad(){
+    private void crearTiraMaterias(){
 
     }
 
