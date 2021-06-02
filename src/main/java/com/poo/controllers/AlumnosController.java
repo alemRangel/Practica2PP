@@ -108,6 +108,7 @@ public class AlumnosController  extends UniversidadController{
                         return;
                     }
                     System.out.println("No se encontró el alumno buscado \n");
+                    return;
                 }
             }
         }

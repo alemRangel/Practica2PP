@@ -5,6 +5,7 @@ import com.poo.models.*;
 import com.poo.enums.ModalidadClase;
 import com.poo.enums.TipoPersona;
 
+import javax.print.Doc;
 import java.util.Scanner;
 import java.util.Date;
 
@@ -149,7 +150,26 @@ public class DocentesController extends UniversidadController{
     }
 
     private void addMateria() {
-        System.out.println("Elija la materia por id, a la que le quiera añadir un docente");
+        int idMateriaAux,idDocenteAux;
+        System.out.println("Elija la materia por id, a la que le quiera añadir un docente \n");
+        idMateriaAux = scan.nextInt();
+        for(Materia materia : universidad.getMaterias()){
+            if(materia.getId() == idMateriaAux){
+                System.out.println("Ingrese el número de Id del profesor al que desea asignar " +
+                        "a la materia: "+materia.getNombreMateria()+"\n");
+                idDocenteAux = scan.nextInt();
+                for(Docente docente : universidad.getDocentes()){
+                    if(docente.getId() == idDocenteAux){
+                        universidad.getMaterias().get(idMateriaAux).setDocente(docente);
+                        System.out.println("Se designó al docente "+docente.getNombre()+"" +
+                                "como titular de la materia "+materia.getNombreMateria()+"");
+                    }
+                }
+                System.out.println("No se encontró el profesor buscado");
+                return;
+            }
+        }
+        System.out.println("No se encontró la materia buscada");
     }
 
 

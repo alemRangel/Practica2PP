@@ -5,6 +5,7 @@ public class Materia {
     private String nombreMateria;
     private String claveGrupo;
     private Docente docente;
+    private PersonalApoyo personalApoyo;
     
     public Materia(int id, String nombreMateria, String claveGrupo, Docente docente){
         this.id=id;
@@ -24,6 +25,10 @@ public class Materia {
     }
     public Docente getDocente(){
         return docente;
+    }
+    public void setDocente(Docente docente){this.docente = docente;}
+    public void setPersonalApoyo(PersonalApoyo personaApoyo){
+        this.personalApoyo = personaApoyo;
     }
 
     public String toString(){

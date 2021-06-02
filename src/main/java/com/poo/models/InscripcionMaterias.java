@@ -20,6 +20,7 @@ public class InscripcionMaterias {
     public float getCalificacion(){
         return calificacion;
     }
+
     public int getId(){
         return id;
     }

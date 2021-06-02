@@ -19,9 +19,10 @@ public class PersonalApoyo extends Persona {
         return id;
     }
 
+
     public String toString(){
 
-        return super.toString()+"Id: "+id+"Tipo de personal de apoyo: "+tipoPersonal;
+        return "Id: "+id+super.toString()+"\tTipo de personal de apoyo: "+tipoPersonal;
 
     }
 
