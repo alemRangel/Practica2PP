@@ -32,6 +32,11 @@ public class Persona{
         return fechaNac;
     }
 
+    public String toString(){
+        return "Nombre:"+nombre+"Curp: "+curp+" Direccion: "+direccion+" Fecha de nacimietno: "+
+        fechaNac;
+    }
+
     /*public Persona buscarPersonaCurp(String curp){
 
         if (curp.equals(user.getCurp()) {
