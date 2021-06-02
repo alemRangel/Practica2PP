@@ -31,6 +31,7 @@ public class UniversidadController {
         Date fechaNacimiento;
         int opcFechaMatricula = 0;
         System.out.println("Va a dar de alta un nuevo" +tipoPersona+": \n");
+        scan.nextLine();
         System.out.println("Introduzca el nombre del " +tipoPersona+" \n");
         nombre = scan.nextLine();
         System.out.println("Introduzca la curp del " +tipoPersona+"\n");

@@ -75,11 +75,10 @@ public class MateriasController extends UniversidadController{
         nombreMateria = scan.nextLine();
         scan.nextLine();
         for(int i=0;i<universidad.getMaterias().size();i++){
-            if(universidad.getAlumnos().get(i).getTiraMaterias().getInscripcionMaterias().getMateriadeTira().getNombreMateria().equals(nombreMateria)){
+            /*if(universidad.getAlumnos().get(i).getTiraMaterias().getInscripcionMaterias().getMateriadeTira().getNombreMateria().equals(nombreMateria)){
                 //System.out.println(universidad.getMaterias().get(i).getNombreMateria());
                 System.out.println(universidad.getAlumnos().get(i).getNombreAlumno());
-            }
-            
+            }*/
         }
     }
 

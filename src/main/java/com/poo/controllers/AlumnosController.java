@@ -84,30 +84,97 @@ public class AlumnosController  extends UniversidadController{
         universidad.getAlumnos().add(alumnoNuevo);
     }
     private void addMateriaToAlumno(){
-
+        int idMateriaAux=0,idAlumnoAux=0;
+        Alumno alumnoAux;
+        Materia materiaAux;
+        InscripcionMaterias inscripcionMateria;
+        System.out.println("Ingrese el número de id de la materia que quiere añadir \n");
+        idMateriaAux= scan.nextInt();
+        for(Materia materia: universidad.getMaterias()){
+            if(materia.getId() == idMateriaAux) {
+                System.out.println("Se ha encontrado una materia con ese Id \n");
+                materiaAux = materia;
+                System.out.println("Ingrese el número de id del alumno al que desee" +
+                        "añadir a esta materia \n");
+                idAlumnoAux = scan.nextInt();
+                for (Alumno alumno : universidad.getAlumnos()) {
+                    if (alumno.getId() == idAlumnoAux) {
+                        System.out.println("Se ha encontrado un alumno con ese id \n");
+                        alumnoAux = alumno;
+                        inscripcionMateria = new InscripcionMaterias(alumnoAux.getTiraMaterias().getInscripcionMaterias().size() + 1,
+                                alumnoAux, materiaAux, 0);
+                        universidad.getAlumnos().get(idAlumnoAux).getTiraMaterias().getInscripcionMaterias().add(inscripcionMateria);
+                        return;
+                    }
+                    System.out.println("No se encontró el alumno buscado \n");
+                }
+            }
+        }
+        System.out.println("No se encontró la materia buscada \n");
     }
     private void getAllAlumnos(){
         System.out.println("La lista de alumnos es la siguiente: \n");
-        for(Alumno alumno: universidad.getAlumnos()){
-            System.out.println("ID:"+alumno.getId()+"\t Nombre: "+alumno.getNombre()+"\t" +
-                    "CURP:"+alumno.getCurp()+"\t Dirección: "+alumno.getDireccion()+"\t" +
-                    "Fecha de nacimiento:"+alumno.getFechaNac()+"\t Modalidad: "+alumno.getModalidadClase()+"\n");
-            System.out.println("La tira de materias de "+alumno.getNombre()+" es: \n");
-            for(InscripcionMaterias inscripcionMaterias: alumno.getTiraMaterias().getInscripcionMaterias()){
-                System.out.println("Nombre de la Materia:"+inscripcionMaterias.getMateriadeTira().getNombreMateria()+" \n");
+        if(universidad.getAlumnos().size() > 0){
+            for(Alumno alumno: universidad.getAlumnos()){
+                imprimirAlumno(alumno);
             }
+        }else{
+            System.out.println("Aún no hay alumnos inscritos en la universidad \n");
         }
+
     }
     private void getAlumnoById(){
-
+        int auxIdAlumno;
+        System.out.println("Inserte el ID de alumno que desee buscar\n");
+        auxIdAlumno = scan.nextInt();
+        for(Alumno alumno: universidad.getAlumnos()){
+            if(alumno.getId() == auxIdAlumno){
+                imprimirAlumno(alumno);
+                return;
+            }
+        }
+        System.out.println("No se encontró ningún alumno con ese id \n");
     }
     private void getAlumnoByNombre(){
-
+        String auxNombreAlumno;
+        System.out.println("Inserte el nombre de alumno que desee buscar\n");
+        scan.nextLine();
+        auxNombreAlumno = scan.nextLine();
+        for(Alumno alumno: universidad.getAlumnos()){
+            if(alumno.getNombre().equals(auxNombreAlumno)){
+                imprimirAlumno(alumno);
+                return;
+            }
+        }
+        System.out.println("No se encontró ningún alumno con ese nombre \n");
     }
-    private void deleteAlumno(){}
+    private void deleteAlumno(){
+        int auxIdAlumno;
+        System.out.println("Inserte el ID de alumno que desee buscar \n");
+        auxIdAlumno = scan.nextInt();
+        for(Alumno alumno: universidad.getAlumnos()) {
+            if (alumno.getId() == auxIdAlumno) {
+                imprimirAlumno(alumno);
+                System.out.println("El sistema encontró al alumno buscado y lo eliminó \n");
+                universidad.getAlumnos().remove(alumno);
+                return;
+            }
+        }
+        System.out.println("No se encontró ningún alumno con ese id \n");
+    }
 
-    private void crearTiraMaterias(){
-
+    private void imprimirAlumno(Alumno alumno){
+        System.out.println("ID:"+alumno.getId()+"\t Nombre: "+alumno.getNombre()+"\t" +
+                "CURP:"+alumno.getCurp()+"\t Dirección: "+alumno.getDireccion()+"\t" +
+                "Fecha de nacimiento:"+alumno.getFechaNac()+"\t Modalidad: "+alumno.getModalidadClase()+"\n");
+        if(alumno.getTiraMaterias() != null) {
+            System.out.println("La tira de materias de "+alumno.getNombre()+" es: \n");
+            for (InscripcionMaterias inscripcionMaterias : alumno.getTiraMaterias().getInscripcionMaterias()) {
+                System.out.println("Nombre de la Materia:" + inscripcionMaterias.getMateriadeTira().getNombreMateria() + " \n");
+            }
+        }
+        else
+            System.out.println("El alumno aún no tiene materias inscritas \n");
     }
 
 
