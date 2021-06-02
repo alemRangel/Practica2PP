@@ -1,17 +1,27 @@
 package com.poo.models;
 
+import java.util.ArrayList;
+
 public class TiraMaterias {
     private int id;
     private Alumno alumno;
-    private InscripcionMaterias inscripcionMaterias;
+    private ArrayList<InscripcionMaterias> inscripcionMaterias;
     
-    public TiraMaterias(int id, Alumno alumno, InscripcionMaterias inscMat){
+    public TiraMaterias(int id, Alumno alumno,ArrayList <InscripcionMaterias> inscMat){
         this.id=id;
         this.alumno=alumno;
         inscripcionMaterias=inscMat;
     }
 
-    public InscripcionMaterias getInscripcionMaterias(){
+
+    public int getIdTiraMaterias(){
+        return this.id;
+    }
+    public Alumno getAlumno(){
+        return this.alumno;
+    }
+    public ArrayList<InscripcionMaterias> getInscripcionMaterias(){
+
         return inscripcionMaterias;
     }
 }

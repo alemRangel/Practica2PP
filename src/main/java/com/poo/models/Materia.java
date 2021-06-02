@@ -13,8 +13,17 @@ public class Materia {
         this.docente=docente;
     }
 
+    public int getId(){
+        return id;
+    }
     public String getNombreMateria(){
         return nombreMateria;
+    }
+    public String getClaveGrupo(){
+        return claveGrupo;
+    }
+    public Docente getDocente(){
+        return docente;
     }
 
     public String toString(){
