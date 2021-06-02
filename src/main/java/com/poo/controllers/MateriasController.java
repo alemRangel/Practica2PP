@@ -118,8 +118,8 @@ public class MateriasController extends UniversidadController{
     }
 
     public void impMaterias(){
-        for(int i=0;i<universidad.getMaterias().size();i++){
-            System.out.println(universidad.getMaterias().get(i).getNombreMateria());
+        for(int i=0;i<universidad.getMaterias().size();i++){            
+            System.out.println(universidad.getMaterias().get(i));
         }
 
     }
