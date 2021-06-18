@@ -2,6 +2,7 @@ package com.poo.grafica;
 
 import com.poo.grafica.alumno.*;
 import com.poo.grafica.docente.AddDocenteInterfaz;
+import com.poo.grafica.docente.getDocentes;
 import com.poo.models.Universidad;
 
 import javax.swing.*;
@@ -123,6 +124,32 @@ public class Menu{
             }
         });
 
+<<<<<<< HEAD
+=======
+        mD3.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                JOptionPane.showMessageDialog(frame, "Entrando a Mostrar Docentes");
+                getDocentes GetDocentes = new getDocentes(miUniversidad);
+                GetDocentes.showDocentes();
+            }
+
+        });
+
+        JMenuItem mPA1 = new JMenuItem("Contratar personal de apoyo");
+        JMenuItem mPA2 = new JMenuItem("Asignar Personal de apoyo a materia");
+        JMenuItem mPA3 = new JMenuItem("Ver todo el personal de Apoyo");
+        JMenuItem mPA4 = new JMenuItem("Buscar personal de apoyo por ID");
+        JMenuItem mPA5 = new JMenuItem("Buscar personal de apoyo por Nombre");
+        JMenuItem mPA6 = new JMenuItem("Despedir personal de apoyo");
+
+
+        menu_PApoyo.add(mPA1);
+        menu_PApoyo.add(mPA2);
+        menu_PApoyo.add(mPA3);
+        menu_PApoyo.add(mPA4);
+        menu_PApoyo.add(mPA5);
+        menu_PApoyo.add(mPA6);
+>>>>>>> 57e823cd361a391abac6859707f90b381ffd69d9
 
         JMenuItem mM1 = new JMenuItem("Alta de materia");
         JMenuItem mM2 = new JMenuItem("Mostrar Alumnos de una materia");
