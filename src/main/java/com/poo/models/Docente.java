@@ -16,6 +16,7 @@ public class Docente extends Persona {
         super(curp,nombre,direccion,fechaNac);
         this.id=id;
         this.fechaContratacion=fechaContratacion;
+        this.modalidadContrato=modalidadContrato;
 
     }
    
@@ -39,7 +40,7 @@ public class Docente extends Persona {
     }
     public String toString(){
         return "Nombre:"+nombre+"Curp: "+curp+" Direccion: "+direccion+" Fecha de nacimietno: "+
-        fechaNac+" iD: "+id+" Fecha contratacion: "+fechaContratacion;
+        fechaNac+" iD: "+id+" Fecha contratacion: "+fechaContratacion+" Modalidad: "+modalidadContrato;
     }
 
     
