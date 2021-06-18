@@ -1,5 +1,6 @@
 package com.poo.grafica.docente;
 
+import com.poo.interfaces.InterfaceUniversidad;
 import com.poo.models.Docente;
 import com.poo.models.Universidad;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
-public class AddDocenteInterfaz extends JDialog{
+public class AddDocenteInterfaz extends JDialog implements InterfaceUniversidad {
 	private static final int WIDTH = 400;
 	private static final int HEIGHT = 300;
 	private ArrayList<Docente> docentes = new ArrayList<>();;
@@ -25,7 +26,6 @@ public class AddDocenteInterfaz extends JDialog{
 	private CalculateButtonHandler cbHandler;
 	private ExitButtonHandler ebHandler;
 	private JDialog dialog;
-
 	public AddDocenteInterfaz(Universidad miUniversidad){
 		this.miUniversidad = miUniversidad;
 	}
@@ -76,6 +76,7 @@ public class AddDocenteInterfaz extends JDialog{
 		
 		
 		
+
 
 
 		JDialog dialog = new JDialog();
@@ -145,10 +146,14 @@ public class AddDocenteInterfaz extends JDialog{
 	
 	private class ExitButtonHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e){
-			System.exit(0);
-			dialog.dispose();
+
+			//System.exit(0);
+		 dialog.dispose();
+
 		}
 	}
-		
+	public Universidad getMiUniversidad(){
+		return miUniversidad;
+	}
 	
 }
