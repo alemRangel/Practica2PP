@@ -72,6 +72,9 @@ public class getDocentes {
         
     
 }
+    public Universidad getMiUniversidad() {
+        return miUniversidad;
+     }
 
    
 }

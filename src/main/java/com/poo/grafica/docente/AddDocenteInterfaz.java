@@ -137,7 +137,7 @@ public class AddDocenteInterfaz extends JDialog implements InterfaceUniversidad 
 			//docentes.add(d);
 			miUniversidad.getDocentes().add(d);			
 			
-			//System.out.println(miUniversidad.getDocentes());
+			System.out.println(miUniversidad.getDocentes());
 			
 			
             JOptionPane.showMessageDialog(null, "Operación realizada correctamente");

@@ -1,19 +1,21 @@
 package com.poo.grafica.alumno;
 
-import com.poo.enums.ModalidadClase;
-import com.poo.interfaces.InterfaceUniversidad;
-import com.poo.models.Alumno;
-import com.poo.models.TiraMaterias;
-import com.poo.models.Universidad;
-import com.sun.deploy.panel.ControlPanel;
-import jdk.nashorn.internal.scripts.JD;
-
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.Date;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
+import com.poo.interfaces.InterfaceUniversidad;
+import com.poo.models.Alumno;
+import com.poo.models.Universidad;
 
 public class ShowAllAlumnosInterfaz extends JDialog implements InterfaceUniversidad {
     private Universidad miUniversidad;
