@@ -10,8 +10,14 @@ enum modalidad{
 public class Docente extends Persona {
     private int id;
     private Date fechaContratacion;
+<<<<<<< Updated upstream
 
     public Docente(String curp, String nombre, String direccion, Date fechaNac, int id, Date fechaContratacion){
+=======
+    private String modalidadContrato;
+    public Docente(String curp, String nombre, String direccion, Date fechaNac, int id, Date fechaContratacion,
+                   String modalidadContrato){
+>>>>>>> Stashed changes
         super(curp,nombre,direccion,fechaNac);
         this.id=id;
         this.fechaContratacion=fechaContratacion;
@@ -27,6 +33,11 @@ public class Docente extends Persona {
         return fechaContratacion;
     }
 
+<<<<<<< Updated upstream
+=======
+    //public ModalidadContrato getModalidadContrato(){return modalidadContrato;}
+
+>>>>>>> Stashed changes
     public Docente buscarDocentePorNombre(ArrayList<Docente> docentes,String nombre){
         for(Docente docente : docentes){
             if(docente.getNombre()==nombre) return docente;
