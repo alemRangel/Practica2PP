@@ -23,7 +23,7 @@ public class AddDocenteInterfaz extends JDialog{
 	private Universidad miUniversidad;
 	private CalculateButtonHandler cbHandler;
 	private ExitButtonHandler ebHandler;
-
+	private JDialog dialog;
 	public AddDocenteInterfaz(Universidad miUniversidad){
 		this.miUniversidad = miUniversidad;
 	}
@@ -65,7 +65,7 @@ public class AddDocenteInterfaz extends JDialog{
 		
 
 
-		JDialog dialog = new JDialog();
+		dialog = new JDialog();
 		dialog.setLayout(new GridLayout(7, 2));
 		dialog.add(curpL);     // Renglon = 1, Columna = 1
 		dialog.add(curpTF);    // Renglon = 1, Columna = 2
@@ -132,7 +132,7 @@ public class AddDocenteInterfaz extends JDialog{
 	private class ExitButtonHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			//System.exit(0);
-		//dialog.dispose();
+		 dialog.dispose();
 		}
 	}
 		
