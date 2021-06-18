@@ -24,6 +24,7 @@ public class AddDocenteInterfaz extends JDialog{
 	private Universidad miUniversidad;
 	private CalculateButtonHandler cbHandler;
 	private ExitButtonHandler ebHandler;
+	private JDialog dialog;
 
 	public AddDocenteInterfaz(Universidad miUniversidad){
 		this.miUniversidad = miUniversidad;
@@ -106,13 +107,12 @@ public class AddDocenteInterfaz extends JDialog{
 	/*private*/ class CalculateButtonHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			SimpleDateFormat dFormatter = new SimpleDateFormat("dd-MM-yyyy");
-			String curp,nombre,direccion,modalidad;//, fechaNac, fechaCon;			
-			//Date fechaNac= new Date(),fechaCon=new Date();
+			String curp,nombre,direccion,modalidad;
 			int id_;
 			curp=curpTF.getText();
 			nombre=nombreTF.getText();
 			direccion=curpTF.getText();
-			//Date dReportDate = dFormatter.format(myStringDate);
+			
 			Date fechaNac= null;
 			try {
 				fechaNac = dFormatter.parse(fechaNacTF.getText());
@@ -127,17 +127,16 @@ public class AddDocenteInterfaz extends JDialog{
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			//fechaCon="18-06-2021";
-			//idTF.setText(docentes.size()+1);
+			
 			idTF.setText(String.valueOf(docentes.size()+1));
 			id_=Integer.parseInt(idTF.getText());
 			modalidad=(String)modalidades.getSelectedItem();
 			
 			Docente d= new Docente(curp,nombre,direccion,fechaNac,id_,fechaCon,modalidad);
-			docentes.add(d);
+			//docentes.add(d);
+			miUniversidad.getDocentes().add(d);			
 			
-			//AddDocenteInterfaz controlDocentes = new AddDocenteInterfaz(miUniversidad);
-			System.out.println(docentes);
+			System.out.println(miUniversidad.getDocentes());
 			
 			
             JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
@@ -147,7 +146,7 @@ public class AddDocenteInterfaz extends JDialog{
 	private class ExitButtonHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			System.exit(0);
-			//dialog.dispose();
+			dialog.dispose();
 		}
 	}
 		

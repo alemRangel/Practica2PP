@@ -20,6 +20,28 @@ public class Docente extends Persona {
 
     }
    
+    public String getNombre(){
+        return nombre;
+    }
+
+    public String getDireccion(){
+        return direccion;        
+    }
+
+    public String getModalidad(){
+        return modalidadContrato;
+    }
+
+    public String getCurp(){
+        return curp;
+    }
+
+    public Date getFechaNac(){
+        return fechaNac;
+    }
+    public Date getFechaCont(){
+        return fechaContratacion;
+    }
 
     public int getId(){
         return id;
