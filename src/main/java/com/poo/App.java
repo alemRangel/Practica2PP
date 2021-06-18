@@ -22,7 +22,6 @@ public class App
         DocentesController controladorDocentes;
         PersonalController controladorPersonal;
         MateriasController controladorMaterias;
-        Menu menu = new Menu(miUniversidad);
         Scanner scan = new Scanner(System.in);
         int controlOperacion;
         do{
