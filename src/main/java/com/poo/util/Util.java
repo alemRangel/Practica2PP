@@ -13,4 +13,10 @@ public class Util {
         }
         return fecha;
     }
+    public String notEmpty(String cadena){
+        if(cadena==null || cadena == "" || cadena == " "){
+            return null;
+        }
+        return cadena;
+    }
 }
