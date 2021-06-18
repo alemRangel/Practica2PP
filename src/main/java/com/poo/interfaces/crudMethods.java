@@ -2,7 +2,7 @@ package com.poo.interfaces;
 
 import com.poo.models.Universidad;
 
-public interface crudMethods {
+public interface CrudMethods {
     public void createElement();
     public void deleteElement();
     public void updateElement();

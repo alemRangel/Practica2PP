@@ -2,11 +2,12 @@ package com.poo.controllers;
 
 import com.poo.enums.ModalidadClase;
 import com.poo.enums.TipoPersona;
+import com.poo.interfaces.CrudMethods;
 import com.poo.models.*;
 
 import java.util.Date;
 
-public class AlumnosController  extends UniversidadController{
+public class AlumnosController  extends UniversidadController implements CrudMethods {
     public AlumnosController(Universidad miUniversidad){
         super(miUniversidad);
     }
@@ -108,6 +109,37 @@ public class AlumnosController  extends UniversidadController{
 
     private void crearTiraMaterias(){
 
+    }
+
+
+    @Override
+    public void createElement() {
+
+    }
+
+    @Override
+    public void deleteElement() {
+
+    }
+
+    @Override
+    public void updateElement() {
+
+    }
+
+    @Override
+    public void getAllElements() {
+
+    }
+
+    @Override
+    public void getElementById() {
+
+    }
+
+    @Override
+    public Universidad getUniversidad() {
+        return null;
     }
 
 

@@ -63,8 +63,39 @@ class gui {
         JMenuItem mD5 = new JMenuItem("Buscar profesor por Nombre");
         JMenuItem mD6 = new JMenuItem("Despedir Profesor");
 
+        menu_Docente.add(mD1);
+        menu_Docente.add(mD2);
+        menu_Docente.add(mD3);
+        menu_Docente.add(mD4);
+        menu_Docente.add(mD5);
+        menu_Docente.add(mD6);
+
+        JMenuItem mPA1 = new JMenuItem("Contratar personal de apoyo");
+        JMenuItem mPA2 = new JMenuItem("Asignar Personal de apoyo a materia");
+        JMenuItem mPA3 = new JMenuItem("Ver todo el personal de Apoyo");
+        JMenuItem mPA4 = new JMenuItem("Buscar personal de apoyo por ID");
+        JMenuItem mPA5 = new JMenuItem("Buscar personal de apoyo por Nombre");
+        JMenuItem mPA6 = new JMenuItem("Despedir personal de apoyo");
 
 
+        menu_Docente.add(mPA1);
+        menu_Docente.add(mPA2);
+        menu_Docente.add(mPA3);
+        menu_Docente.add(mPA4);
+        menu_Docente.add(mPA5);
+        menu_Docente.add(mPA6);
+
+        JMenuItem mM1 = new JMenuItem("Alta de materia");
+        JMenuItem mM2 = new JMenuItem("Mostrar Alumnos de una materia");
+        JMenuItem mM3 = new JMenuItem("Profesor de una materia");
+        JMenuItem mM4 = new JMenuItem("Dar de baja una materia");
+        JMenuItem mM5 = new JMenuItem("Mostrar todas las materias");
+
+        menu_Materias.add(mM1);
+        menu_Materias.add(mM2);
+        menu_Materias.add(mM3);
+        menu_Materias.add(mM4);
+        menu_Materias.add(mM5);
 
 
         //Creating the panel at bottom and adding components

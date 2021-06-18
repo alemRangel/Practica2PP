@@ -1,17 +1,15 @@
 package com.poo.controllers;
 
 import com.poo.enums.ModalidadContrato;
+import com.poo.interfaces.CrudMethods;
 import com.poo.models.Universidad;
-import com.poo.enums.ModalidadClase;
 import com.poo.enums.TipoPersona;
-import com.poo.models.Alumno;
 import com.poo.models.Docente;
 import com.poo.models.Persona;
 
-import java.util.Scanner;
 import java.util.Date;
 
-public class DocentesController extends UniversidadController{
+public class DocentesController extends UniversidadController implements CrudMethods {
     public DocentesController(Universidad miUniversidad){
         super(miUniversidad);
     }
@@ -107,5 +105,35 @@ public class DocentesController extends UniversidadController{
     }
 
     private void addProfesor() {
+    }
+
+    @Override
+    public void createElement() {
+
+    }
+
+    @Override
+    public void deleteElement() {
+
+    }
+
+    @Override
+    public void updateElement() {
+
+    }
+
+    @Override
+    public void getAllElements() {
+
+    }
+
+    @Override
+    public void getElementById() {
+
+    }
+
+    @Override
+    public Universidad getUniversidad() {
+        return null;
     }
 }
