@@ -17,6 +17,7 @@ public class Docente extends Persona {
         this.fechaContratacion=fechaContratacion;
 
     }
+   
 
     public int getId(){
         return id;
@@ -32,6 +33,10 @@ public class Docente extends Persona {
         }
         return null;
 
+    }
+    public String toString(){
+        return "Nombre:"+nombre+"Curp: "+curp+" Direccion: "+direccion+" Fecha de nacimietno: "+
+        fechaNac+" iD: "+id+" Fecha contratacion: "+fechaContratacion;
     }
 
     

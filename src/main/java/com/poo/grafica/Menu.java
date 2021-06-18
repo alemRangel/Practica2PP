@@ -1,6 +1,7 @@
 package com.poo.grafica;
 
 import com.poo.grafica.alumno.AddAlumnoInterfaz;
+import com.poo.grafica.docente.AddDocenteInterfaz;
 import com.poo.models.Universidad;
 
 import javax.swing.*;
@@ -69,6 +70,14 @@ public class Menu{
         menu_Docente.add(mD4);
         menu_Docente.add(mD5);
         menu_Docente.add(mD6);
+
+        mD1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "Entrando a Añadir Docente");
+                AddDocenteInterfaz addDocenteInterfaz = new AddDocenteInterfaz(miUniversidad);
+                addDocenteInterfaz.showDocenteMenu();
+            }
+        });
 
         JMenuItem mPA1 = new JMenuItem("Contratar personal de apoyo");
         JMenuItem mPA2 = new JMenuItem("Asignar Personal de apoyo a materia");
