@@ -78,12 +78,12 @@ public class Menu{
         JMenuItem mPA6 = new JMenuItem("Despedir personal de apoyo");
 
 
-        menu_Docente.add(mPA1);
-        menu_Docente.add(mPA2);
-        menu_Docente.add(mPA3);
-        menu_Docente.add(mPA4);
-        menu_Docente.add(mPA5);
-        menu_Docente.add(mPA6);
+        menu_PApoyo.add(mPA1);
+        menu_PApoyo.add(mPA2);
+        menu_PApoyo.add(mPA3);
+        menu_PApoyo.add(mPA4);
+        menu_PApoyo.add(mPA5);
+        menu_PApoyo.add(mPA6);
 
         JMenuItem mM1 = new JMenuItem("Alta de materia");
         JMenuItem mM2 = new JMenuItem("Mostrar Alumnos de una materia");
