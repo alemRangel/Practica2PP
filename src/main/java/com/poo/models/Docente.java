@@ -19,6 +19,10 @@ public class Docente extends Persona {
         this.modalidadContrato=modalidadContrato;
 
     }
+
+    public Docente(){
+        super();
+    }
    
     public String getNombre(){
         return nombre;
@@ -56,6 +60,13 @@ public class Docente extends Persona {
     public Docente buscarDocentePorNombre(ArrayList<Docente> docentes,String nombre){
         for(Docente docente : docentes){
             if(docente.getNombre()==nombre) return docente;
+        }
+        return null;
+
+    }
+    public Docente buscarDocentePorId(ArrayList<Docente> docentes,int Id){
+        for(Docente docente : docentes){
+            if(docente.getId()==Id) return docente;
         }
         return null;
 

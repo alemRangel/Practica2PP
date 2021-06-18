@@ -2,6 +2,7 @@ package com.poo.grafica;
 
 import com.poo.grafica.alumno.AddAlumnoInterfaz;
 import com.poo.grafica.docente.AddDocenteInterfaz;
+import com.poo.grafica.docente.getDocenteId;
 import com.poo.grafica.docente.getDocentes;
 import com.poo.models.Universidad;
 
@@ -122,6 +123,14 @@ public class Menu{
                 JOptionPane.showMessageDialog(frame, "Entrando a Mostrar Docentes");
                 getDocentes GetDocentes = new getDocentes(miUniversidad);
                 GetDocentes.showDocentes();
+            }
+
+        });
+        mD4.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                JOptionPane.showMessageDialog(frame, "Mostrar Docente por Id");
+                getDocenteId GetDocentesId = new getDocenteId(miUniversidad);
+                //GetDocentesId.showDocenteId();
             }
 
         });

@@ -129,7 +129,7 @@ public class AddDocenteInterfaz extends JDialog implements InterfaceUniversidad 
 				e1.printStackTrace();
 			}
 			
-			idTF.setText(String.valueOf(docentes.size()+1));
+			idTF.setText(String.valueOf(miUniversidad.getDocentes().size()+1));
 			id_=Integer.parseInt(idTF.getText());
 			modalidad=(String)modalidades.getSelectedItem();
 			
@@ -137,7 +137,7 @@ public class AddDocenteInterfaz extends JDialog implements InterfaceUniversidad 
 			//docentes.add(d);
 			miUniversidad.getDocentes().add(d);			
 			
-			System.out.println(miUniversidad.getDocentes());
+			//System.out.println(miUniversidad.getDocentes());
 			
 			
             JOptionPane.showMessageDialog(null, "Operación realizada correctamente");

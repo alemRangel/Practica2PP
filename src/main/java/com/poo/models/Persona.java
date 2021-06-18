@@ -16,6 +16,9 @@ public class Persona{
         this.fechaNac=fechaNac;
     }
 
+    public Persona() {
+    }
+
     public String getCurp(){
         return curp;
     }

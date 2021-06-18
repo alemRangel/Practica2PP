@@ -61,6 +61,13 @@ public class Universidad {
     public int  getDocentesId(){
         return alumnosId;
     }
+    public Docente buscarDocentePorId(ArrayList<Docente> docentes,int Id){
+        for(Docente docente : docentes){
+            if(docente.getId()==Id) return docente;
+        }
+        return null;
+
+    }
     public int  getPersonalId(){
         return alumnosId;
     }
