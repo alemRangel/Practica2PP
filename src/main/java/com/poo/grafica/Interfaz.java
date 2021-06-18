@@ -7,7 +7,8 @@ import java.awt.event.ActionListener;
 // even if you are working with just swings.
 import javax.swing.*;
 
-import com.poo.grafica.alumno.AddAlumnoInterfaz;
+//import com.poo.grafica.alumno.AddAlumnoInterfaz;
+//import com.poo.grafica.alumno.AddAlumnoInterfaz;
 import com.poo.models.Universidad;
 
 import java.awt.*;
