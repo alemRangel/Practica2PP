@@ -1,27 +1,23 @@
-package com.poo.util;
+package com.poo.grafica;
 
-import com.poo.controllers.AlumnosController;
-import java.awt.Component;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import com.poo.models.Universidad;
 
 //Usually you will require both swing and awt packages
 // even if you are working with just swings.
 import javax.swing.*;
 
-import com.poo.Interfaces.AlumnoInterfaz;
+import com.poo.grafica.alumno.AddAlumnoInterfaz;
+import com.poo.models.Universidad;
 
 import java.awt.*;
 class gui {
     public static void main(String args[]) {
-
+        final Universidad miUniversidad = new Universidad();
         //Creating the Frame
-        JFrame frame = new JFrame("Gestion Escolar");
+        final JFrame frame = new JFrame("Gestion Escolar");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
+        frame.setSize(350, 150);
 
         //Creating the MenuBar and adding components
         JMenuBar menus = new JMenuBar();
@@ -43,20 +39,33 @@ class gui {
         JMenuItem mA4 = new JMenuItem("Buscar alumno por id");
         JMenuItem mA5 = new JMenuItem("Buscar alumno por nombre");
         JMenuItem mA6 = new JMenuItem("Dar de baja alumno");
-        
+
+
         menu_Alumno.add(mA1);
         mA1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                AlumnoInterfaz addAlumnoI= new AlumnoInterfaz();
+                JOptionPane.showMessageDialog(frame, "Entrando a Añadir Alumno");
+                AddAlumnoInterfaz addAlumnoInterfaz = new AddAlumnoInterfaz(miUniversidad);
+                addAlumnoInterfaz.showAlumnoMenu();
             }
         });
+
         menu_Alumno.add(mA2);
         menu_Alumno.add(mA3);
         menu_Alumno.add(mA4);
         menu_Alumno.add(mA5);
         menu_Alumno.add(mA6);
 
-        
+        JMenuItem mD1 = new JMenuItem("Contratar docente");
+        JMenuItem mD2 = new JMenuItem("Asignar docente a una materia");
+        JMenuItem mD3 = new JMenuItem("Ver todos los profesores");
+        JMenuItem mD4 = new JMenuItem("Buscar profesor por Id");
+        JMenuItem mD5 = new JMenuItem("Buscar profesor por Nombre");
+        JMenuItem mD6 = new JMenuItem("Despedir Profesor");
+
+
+
+
 
         //Creating the panel at bottom and adding components
         /*JPanel panel = new JPanel(); // the panel is not visible in output
@@ -71,7 +80,9 @@ class gui {
 
         // Text Area at the Center
         JTextArea ta = new JTextArea();
+        ta.setText("Utilice el menú para navegar en el programa");
 
+        frame.add(ta);
         //Adding Components to the frame.
         //frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menus);

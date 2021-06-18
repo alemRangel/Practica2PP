@@ -1,26 +1,33 @@
-package com.poo.Interfaces;
+package com.poo.grafica.alumno;
+
+import com.poo.models.Universidad;
 
 import javax.swing.*;
 import java.awt.*; // Class Container
 import java.awt.event.*;
 
-public class AlumnoInterfaz extends JFrame {
+public class AddAlumnoInterfaz extends JDialog{
 	private static final int WIDTH = 400;
 	private static final int HEIGHT = 300;
-	
+
 	private JLabel curpL, nombreL, direccionL, fechaNacL,idL,fechaMatL,modalidadL;
 	private JTextField curpTF, nombreTF, direccionTF, fechaNacTF,idTF,fechaMatTF,modalidadTF;
 	private JButton calculateB, exitB;
-	
+	private Universidad miUniversidad;
 	private CalculateButtonHandler cbHandler;
 	private ExitButtonHandler ebHandler;
+
+	public AddAlumnoInterfaz(Universidad miUniversidad){
+		this.miUniversidad = miUniversidad;
+	}
+	public AddAlumnoInterfaz(){
+
+	}
+
+
 	
-	
-	
-	
-	public AlumnoInterfaz(){
-		setTitle("Ingresa los datos del Alumno");
-		
+	public void showAlumnoMenu(){
+
 		curpL= new JLabel("CURP: ", SwingConstants.RIGHT);
 		nombreL = new JLabel("Nombre: ", SwingConstants.RIGHT);
 		direccionL = new JLabel("Direccion ", SwingConstants.RIGHT);
@@ -50,26 +57,27 @@ public class AlumnoInterfaz extends JFrame {
 		
 		
 		
-		Container pane = getContentPane();
-		pane.setLayout(new GridLayout(8, 2)); // 8 renglones y dos columnas
-	
-		pane.add(curpL);     // Renglon = 1, Columna = 1
-		pane.add(curpTF);    // Renglon = 1, Columna = 2
-		pane.add(nombreL);      // Renglon = 2, Columna = 1
-		pane.add(nombreTF);	   // Renglon = 2, Columna = 2	
-		pane.add(direccionL);       // Renglon = 3, Columna = 1
-		pane.add(direccionTF);      // Renglon = 3, Columna = 2
-		pane.add(fechaNacL);  // Renglon = 4, Columna = 1
-		pane.add(fechaNacTF); // Renglon = 4, Columna = 2
-        pane.add(idL);  // Renglon = 5, Columna = 1
-		pane.add(idTF); // Renglon = 5, Columna = 2
-        pane.add(fechaMatL);  // Renglon = 6, Columna = 1
-		pane.add(fechaMatTF); // Renglon = 6, Columna = 2
-        pane.add(modalidadL);  // Renglon = 7, Columna = 1
-		pane.add(modalidadTF); // Renglon = 7, Columna = 2
 
-		pane.add(calculateB);
-		pane.add(exitB);
+
+		JDialog dialog = new JDialog();
+		dialog.setLayout(new GridLayout(8, 2));
+		dialog.add(curpL);     // Renglon = 1, Columna = 1
+		dialog.add(curpTF);    // Renglon = 1, Columna = 2
+		dialog.add(nombreL);      // Renglon = 2, Columna = 1
+		dialog.add(nombreTF);	   // Renglon = 2, Columna = 2
+		dialog.add(direccionL);       // Renglon = 3, Columna = 1
+		dialog.add(direccionTF);      // Renglon = 3, Columna = 2
+		dialog.add(fechaNacL);  // Renglon = 4, Columna = 1
+		dialog.add(fechaNacTF); // Renglon = 4, Columna = 2
+		dialog.add(idL);  // Renglon = 5, Columna = 1
+		dialog.add(idTF); // Renglon = 5, Columna = 2
+		dialog.add(fechaMatL);  // Renglon = 6, Columna = 1
+		dialog.add(fechaMatTF); // Renglon = 6, Columna = 2
+		dialog.add(modalidadL);  // Renglon = 7, Columna = 1
+		dialog.add(modalidadTF); // Renglon = 7, Columna = 2
+
+		dialog.add(calculateB);
+		dialog.add(exitB);
 				
 	
 		/* Otro orden
@@ -82,12 +90,12 @@ public class AlumnoInterfaz extends JFrame {
 		pane.add(areaTF);
 		pane.add(perimeterTF);
 		*/
-		
-		setSize(WIDTH, HEIGHT);
-		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		dialog.setSize(WIDTH, HEIGHT);
+		dialog.setVisible(true);
+		dialog.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
-	
+
+
 	/*private*/ class CalculateButtonHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e){
 			/*double width, length, area, perimeter;
@@ -110,7 +118,4 @@ public class AlumnoInterfaz extends JFrame {
 	}
 		
 	
-	public static void main(String []args ){
-		AlumnoInterfaz rectProg = new AlumnoInterfaz();
-	}
 }

@@ -58,7 +58,7 @@ public class DocentesController extends UniversidadController{
     public void addDocente(){
         Docente Docente;
         Persona persona;
-        FechaCont fechaCont;
+        //FechaCont fechaCont;
         ModalidadContrato ModalidadDocente;
         Date  fechaMatricula = null;
         int opcModalidadValida = 0;

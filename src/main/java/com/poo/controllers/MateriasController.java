@@ -66,7 +66,7 @@ public class MateriasController extends UniversidadController{
     }
 
     public void getAlumnMateria(){
-        if(universidad.getAlumnos().isEmpty()) System.out.println("No hay alumnos inscritos en la universidad, ingrese primero los alumnos");
+       /* if(universidad.getAlumnos().isEmpty()) System.out.println("No hay alumnos inscritos en la universidad, ingrese primero los alumnos");
         else {
         String nombreMateria;
         System.out.println("Introduzca el nombre de la materia de la que quiere mostrar los alumnos \n");
@@ -79,7 +79,7 @@ public class MateriasController extends UniversidadController{
             }
             
         }
-    }
+    }*/
 
     }
 

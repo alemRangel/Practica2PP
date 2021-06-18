@@ -4,13 +4,12 @@ package com.poo;
  * Hello world!
  *
  */
+import com.poo.grafica.Menu;
 import com.poo.controllers.AlumnosController;
 import com.poo.controllers.DocentesController;
 import com.poo.controllers.PersonalController;
 import com.poo.controllers.MateriasController;
 import com.poo.models.Universidad;
-
-import java.util.Scanner;
 
 public class App 
 {
@@ -21,7 +20,8 @@ public class App
         DocentesController controladorDocentes;
         PersonalController controladorPersonal;
         MateriasController controladorMaterias;
-        Scanner scan = new Scanner(System.in);
+        Menu menu = new Menu(miUniversidad);
+        /*Scanner scan = new Scanner(System.in);
         int controlOperacion;
         do{
             System.out.println( "Hola, este es su sistema de gestión escolar. Por favor, seleccione una acción: \n " +
@@ -58,7 +58,8 @@ public class App
                 default:
                     System.out.println("Por favor escriba una opción válida \n");
             }
-        }while(true);
-
+        }while(true);*/
     }
+
+
 }
