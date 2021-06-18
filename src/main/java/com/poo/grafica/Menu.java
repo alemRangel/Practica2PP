@@ -1,6 +1,6 @@
 package com.poo.grafica;
 
-import com.poo.grafica.alumno.AddAlumnoInterfaz;
+import com.poo.grafica.alumno.*;
 import com.poo.grafica.docente.AddDocenteInterfaz;
 import com.poo.grafica.docente.getDocenteId;
 import com.poo.grafica.docente.getDocentes;
@@ -27,13 +27,11 @@ public class Menu{
         JMenu menu_Alumno = new JMenu("Alumnos");
         JMenu menu_Docente = new JMenu("Docente");
         JMenu menu_Materias = new JMenu("Materias");
-        JMenu menu_PApoyo = new JMenu("PApoyo");
 
 
         menus.add(menu_Alumno);
         menus.add(menu_Docente);
         menus.add(menu_Materias);
-        menus.add(menu_PApoyo);
 
 
         JMenuItem mA1 = new JMenuItem("Añadir alumno");
@@ -66,7 +64,10 @@ public class Menu{
         mA3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                JOptionPane.showMessageDialog(frame, "Entrando a Mostrar todos los Alumnos");
+                ShowAllAlumnosInterfaz showAllAlumnosInterfaz = new ShowAllAlumnosInterfaz(miUniversidad);
+                showAllAlumnosInterfaz.showAllAlumnos();
+                miUniversidad = showAllAlumnosInterfaz.getMiUniversidad();
             }
         });
 
@@ -74,7 +75,9 @@ public class Menu{
         mA4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                JOptionPane.showMessageDialog(frame, "Entrando a Mostrar Alumno por ID");
+                BuscarAlumnoByIdInterfaz buscarAlumnoByIdInterfaz = new BuscarAlumnoByIdInterfaz(miUniversidad);
+                miUniversidad = buscarAlumnoByIdInterfaz.getMiUniversidad();
             }
         });
 
@@ -83,7 +86,9 @@ public class Menu{
         mA5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                JOptionPane.showMessageDialog(frame, "Entrando a Mostrar Alumno por Nombre");
+                BuscarAlumnoByNombreInterfaz buscarAlumnoByNombreInterfaz = new BuscarAlumnoByNombreInterfaz(miUniversidad);
+                miUniversidad = buscarAlumnoByNombreInterfaz.getMiUniversidad();
             }
         });
 
@@ -91,7 +96,9 @@ public class Menu{
         mA6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                JOptionPane.showMessageDialog(frame, "Entrando a Mostrar Dar de Baja Alumno");
+                EliminarAlumnoInterfaz eliminarAlumnoInterfaz = new EliminarAlumnoInterfaz(miUniversidad);
+                miUniversidad = eliminarAlumnoInterfaz.getMiUniversidad();
             }
         });
 
@@ -118,6 +125,8 @@ public class Menu{
             }
         });
 
+<<<<<<< HEAD
+=======
         mD3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 JOptionPane.showMessageDialog(frame, "Entrando a Mostrar Docentes");
@@ -149,6 +158,7 @@ public class Menu{
         menu_PApoyo.add(mPA4);
         menu_PApoyo.add(mPA5);
         menu_PApoyo.add(mPA6);
+>>>>>>> 57e823cd361a391abac6859707f90b381ffd69d9
 
         JMenuItem mM1 = new JMenuItem("Alta de materia");
         JMenuItem mM2 = new JMenuItem("Mostrar Alumnos de una materia");

@@ -17,6 +17,4 @@ class gui {
         Menu menu = new Menu();
     }
 
-    protected static void addAlumno() {
-    }
 }
