@@ -15,9 +15,9 @@ import java.util.Date;
 
 
 public class AddAlumnoInterfaz extends JDialog implements InterfaceUniversidad {
-	private static final int WIDTH = 400;
-	private static final int HEIGHT = 300;
 
+	public  static final int WIDTH = 400;
+	public static final int HEIGHT = 300;
 	private JLabel curpL, nombreL, direccionL, fechaNacL,idL,fechaMatL,modalidadL;
 	private JTextField curpTF, nombreTF, direccionTF, fechaNacTF;
 	private JComboBox modalidades;
