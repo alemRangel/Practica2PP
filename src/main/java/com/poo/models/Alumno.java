@@ -11,6 +11,7 @@ public class Alumno extends Persona {
     private Date fechaMatricula;
     private ModalidadClase modalidad;
     private TiraMaterias tiraMaterias;
+    private String modalidadString;
 
     public Alumno(String curp, String nombre, String direccion, Date fechaNac, int id, Date fechaMatricula,
                   ModalidadClase modalidad, TiraMaterias tiraMaterias){
@@ -18,6 +19,14 @@ public class Alumno extends Persona {
         this.id=id;
         this.fechaMatricula=fechaMatricula;
         this.modalidad = modalidad;
+        this.tiraMaterias = tiraMaterias;
+    }
+    public Alumno(String curp, String nombre, String direccion, Date fechaNac, int id, Date fechaMatricula,
+                  String modalidad, TiraMaterias tiraMaterias){
+        super(curp,nombre,direccion,fechaNac);
+        this.id=id;
+        this.fechaMatricula=fechaMatricula;
+        this.modalidadString = modalidad;
         this.tiraMaterias = tiraMaterias;
     }
 
@@ -35,6 +44,12 @@ public class Alumno extends Persona {
 
     public String getNombreAlumno(){
         return nombre;
+    }
+    public String getModalidadString(){
+        return modalidadString;
+    }
+    public void setModalidadString(String modalidadString){
+        this.modalidadString = modalidadString;
     }
     /*public Alumno buscarAlumnoId(int id){
         

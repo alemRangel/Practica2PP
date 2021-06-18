@@ -48,14 +48,50 @@ public class Menu{
                 JOptionPane.showMessageDialog(frame, "Entrando a Añadir Alumno");
                 AddAlumnoInterfaz addAlumnoInterfaz = new AddAlumnoInterfaz(miUniversidad);
                 addAlumnoInterfaz.showAlumnoMenu();
+                miUniversidad = addAlumnoInterfaz.getMiUniversidad();
             }
         });
 
         menu_Alumno.add(mA2);
+        mA2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+
         menu_Alumno.add(mA3);
+        mA3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+
         menu_Alumno.add(mA4);
+        mA4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+
+
         menu_Alumno.add(mA5);
+        mA5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+
         menu_Alumno.add(mA6);
+        mA6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
 
         JMenuItem mD1 = new JMenuItem("Contratar docente");
         JMenuItem mD2 = new JMenuItem("Asignar docente a una materia");
@@ -76,6 +112,7 @@ public class Menu{
                 JOptionPane.showMessageDialog(frame, "Entrando a Añadir Docente");
                 AddDocenteInterfaz addDocenteInterfaz = new AddDocenteInterfaz(miUniversidad);
                 addDocenteInterfaz.showDocenteMenu();
+                miUniversidad = addDocenteInterfaz.getMiUniversidad();
             }
         });
 

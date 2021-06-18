@@ -1,6 +1,7 @@
 package com.poo.grafica.alumno;
 
 import com.poo.enums.ModalidadClase;
+import com.poo.interfaces.InterfaceUniversidad;
 import com.poo.models.Alumno;
 import com.poo.models.TiraMaterias;
 import com.poo.models.Universidad;
@@ -13,12 +14,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class AddAlumnoInterfaz extends JDialog{
+public class AddAlumnoInterfaz extends JDialog implements InterfaceUniversidad {
 	private static final int WIDTH = 400;
 	private static final int HEIGHT = 300;
 
 	private JLabel curpL, nombreL, direccionL, fechaNacL,idL,fechaMatL,modalidadL;
-	private JTextField curpTF, nombreTF, direccionTF, fechaNacTF,idTF,fechaMatTF,modalidadTF;
+	private JTextField curpTF, nombreTF, direccionTF, fechaNacTF;
+	private JComboBox modalidades;
 	private JButton darAlta, exitB;
 	private Universidad miUniversidad;
 	private DarAltaHanlder darAltaHandler;
@@ -47,8 +49,13 @@ public class AddAlumnoInterfaz extends JDialog{
 		nombreTF = new JTextField(10);
 		direccionTF = new JTextField(10);
 		fechaNacTF = new JTextField(10);
-        modalidadTF = new JTextField(10);
-		
+		modalidades=new JComboBox<String>();
+		modalidades.setBounds(10,10,80,20);
+		add(modalidades);
+		modalidades.addItem("Presencial");
+		modalidades.addItem("En linea");
+		modalidades.addItem("Mixto");
+
 		// Boton para calculos
 		darAlta = new JButton("Dar de alta");
 		darAltaHandler = new DarAltaHanlder(); // La clase CalculateButoonHandler implementa la interface
@@ -75,8 +82,7 @@ public class AddAlumnoInterfaz extends JDialog{
 		dialog.add(fechaNacL);  // Renglon = 4, Columna = 1
 		dialog.add(fechaNacTF); // Renglon = 4, Columna = 2
 		dialog.add(modalidadL);  // Renglon = 7, Columna = 1
-		dialog.add(modalidadTF); // Renglon = 7, Columna = 2
-
+		dialog.add(modalidades);
 		dialog.add(darAlta);
 		dialog.add(exitB);
 				
@@ -103,10 +109,9 @@ public class AddAlumnoInterfaz extends JDialog{
 			String curp = curpTF.getText();
 			String fechaNacimiento = fechaNacTF.getText();
 			String direccion = direccionTF.getText();
-			String modalidadClase = modalidadTF.getText();
+			String modalidad=(String)modalidades.getSelectedItem();
 			Date fechaMatricula = new Date();
 			Date fechaNacimientoDate = null;
-			ModalidadClase modalidadClaseEnum = null;
 			int opcEnum;
 			try{
 				fechaNacimientoDate = new SimpleDateFormat("dd/MM/yyyy").parse(fechaNacimiento);
@@ -115,31 +120,10 @@ public class AddAlumnoInterfaz extends JDialog{
 						" intente de nuevo");
 				dialog.dispose();
 			}
-			try {
-				opcEnum = Integer.parseInt(modalidadClase);
-			}catch(Exception exception){
-				System.out.println(exception);
-				JOptionPane.showMessageDialog(dialog, "Inserte un entero en el campo modalidad");
-				dialog.dispose();
-			}
-			switch(Integer.parseInt(modalidadClase)) {
-				case 1:
-					modalidadClaseEnum = ModalidadClase.Presencial;
-					break;
-				case 2:
-					modalidadClaseEnum = ModalidadClase.Distancia;
-					break;
-				case 3:
-					modalidadClaseEnum = ModalidadClase.Mixta;
-					break;
-				default:
-					System.out.println("Introduzca una opción válida");
-					JOptionPane.showMessageDialog(dialog, "No se insertó la modalidad correctamente (1,2,3)");
-					dialog.dispose();
-			}
+
 			try{
 				Alumno alumnoNuevo = new Alumno(curp, nombre, direccion,
-						fechaNacimientoDate, miUniversidad.getAlumnosId(), fechaMatricula, modalidadClaseEnum,
+						fechaNacimientoDate, miUniversidad.getAlumnosId(), fechaMatricula, modalidad,
 						new TiraMaterias() );
 				miUniversidad.getAlumnos().add(alumnoNuevo);
 				miUniversidad.setAlumnosId(miUniversidad.getAlumnosId()+1);

@@ -1,5 +1,6 @@
 package com.poo.grafica.docente;
 
+import com.poo.interfaces.InterfaceUniversidad;
 import com.poo.models.Docente;
 import com.poo.models.Universidad;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
-public class AddDocenteInterfaz extends JDialog{
+public class AddDocenteInterfaz extends JDialog implements InterfaceUniversidad {
 	private static final int WIDTH = 400;
 	private static final int HEIGHT = 300;
 	private ArrayList<Docente> docentes = new ArrayList<>();;
@@ -153,6 +154,8 @@ public class AddDocenteInterfaz extends JDialog{
 
 		}
 	}
-		
+	public Universidad getMiUniversidad(){
+		return miUniversidad;
+	}
 	
 }
